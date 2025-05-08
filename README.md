@@ -1,5 +1,7 @@
 ## ERC-4337 흐름도
 
+https://blog.naver.com/tyumr70/223855936101
+
 EOA 사용자는 직접 SimpleAccount에 트랜잭션을 보내지 않는다.
 대신, 서명된 UserOperation 객체만 만들어 놓습니다. (서명 = “이 작업을 실행해줘”)
 
