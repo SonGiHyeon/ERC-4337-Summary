@@ -69,6 +69,7 @@ EntryPoint: UserOp 검증 및 실행의 중앙 허브
 SimplePaymaster: 수수료 대납자 역할
 
 🧪 테스트 시나리오
+
 단일 UserOp 실행
 → account1이 0.01 ETH 전송 (Paymaster 사용)
 
