@@ -17,6 +17,13 @@ EntryPoint는 이 UserOperation을 받아서,
 결국 스마트 컨트랙트(SimpleAccount)가 마치 직접 실행한 것처럼 동작하지만,
 실제로는 EntryPoint가 “대리 실행”해준 겁니다.
 
+장점: 기존 EOA는 msg.sender = 개인키 1개 → 아주 제한적인 기능
+
+ERC-4337로 스마트 컨트랙트가 계정이 되면, 지갑이 이렇게 진화합니다:
+
+<img width="604" alt="image" src="https://github.com/user-attachments/assets/632be051-2352-4328-936e-566a0bf5ff06" />
+
+
 ------------------------------------------------------------------------------------------
 
 User signs → UserOperation → Bundler → EntryPoint.handleOps() →
