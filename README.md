@@ -15,7 +15,7 @@ EntryPoint는 이 UserOperation을 받아서,
 결국 스마트 컨트랙트(SimpleAccount)가 마치 직접 실행한 것처럼 동작하지만,
 실제로는 EntryPoint가 “대리 실행”해준 겁니다.
 
-
+------------------------------------------------------------------------------------------
 
 User signs → UserOperation → Bundler → EntryPoint.handleOps() →
 → validateUserOp → SimpleAccount.validateUserOp() →
@@ -40,6 +40,10 @@ deployer가 SimpleAccount에 ETH 전송
 owner가 서명한 UserOperation을 만들어서 EntryPoint에 전달
 
 EntryPoint는 해당 UserOperation을 검증 → SimpleAccount의 execute 호출 → receiver에게 ETH 전송
+
+
+------------------------------------------------------------------------------------------
+
 
 🧠 ERC-4337 개요
 계정 추상화를 통해 스마트 컨트랙트를 지갑처럼 사용
