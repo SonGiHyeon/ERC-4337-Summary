@@ -1,5 +1,22 @@
 ## ERC-4337 흐름도
 
+EOA 사용자는 직접 SimpleAccount에 트랜잭션을 보내지 않는다.
+대신, 서명된 UserOperation 객체만 만들어 놓습니다. (서명 = “이 작업을 실행해줘”)
+
+이 UserOperation은 실제로는 Bundler라는 EOA가 EntryPoint에 트랜잭션을 보내면서 첨부됩니다.
+즉, 진짜 트랜잭션은 항상 EOA(=Bundler)가 발생시킵니다.
+
+EntryPoint는 이 UserOperation을 받아서,
+
+이게 유효한 요청인지 검증 (validateUserOp)
+
+서명이 맞다면, 해당 스마트 계정(SimpleAccount)의 execute()를 내부 호출합니다.
+
+결국 스마트 컨트랙트(SimpleAccount)가 마치 직접 실행한 것처럼 동작하지만,
+실제로는 EntryPoint가 “대리 실행”해준 겁니다.
+
+
+
 User signs → UserOperation → Bundler → EntryPoint.handleOps() →
 → validateUserOp → SimpleAccount.validateUserOp() →
 → SimpleAccount.execute(...) → 대상 컨트랙트 실행
